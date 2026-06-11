@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
-import { StyleSheet, Text, View, StatusBar } from 'react-native';
+import { StyleSheet, View, StatusBar } from 'react-native';
 import TrackPlayer, { Capability } from 'react-native-track-player';
+import LibraryScreen from './src/screens/LibraryScreen'; // Import our new UI screen
 
 export default function App() {
   
@@ -38,8 +39,8 @@ export default function App() {
   return (
     <View style={styles.container}>
       <StatusBar barStyle="light-content" backgroundColor="#121212" />
-      <Text style={styles.title}>KayTunez</Text>
-      <Text style={styles.subtitle}>Audio Engine Active (SDK 56)</Text>
+      {/* Render the Library Screen directly into our main viewport */}
+      <LibraryScreen />
     </View>
   );
 }
@@ -47,20 +48,6 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#121212',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  title: {
-    color: '#ffffff',
-    fontSize: 28,
-    fontWeight: '700',
-    letterSpacing: 0.5,
-    marginBottom: 4,
-  },
-  subtitle: {
-    color: '#4CD964', // Green accent color indicating successful setup
-    fontSize: 14,
-    fontWeight: '500',
+    backgroundColor: '#121212', // Seamless premium dark background matching our screen
   },
 });
